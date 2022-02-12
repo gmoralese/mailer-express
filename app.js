@@ -1,4 +1,5 @@
 //Express
+require("dotenv").config();
 var express = require("express");
 var app = express();
 
@@ -28,8 +29,8 @@ app.get("/send/mail", (req, res) => {
     port: 465,
     secure: true,
     auth: {
-      user: "g.morales@ecopass.cl",
-      pass: "18021991Gm",
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
     },
   });
 
