@@ -1,4 +1,4 @@
-# Ecopass Mails
+# Mailer
 
 Para utilizarlo:
 
