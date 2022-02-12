@@ -1,0 +1,557 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ecopass</title>
+  <style>
+    /* A simple css reset */
+    body,
+    table,
+    thead,
+    tbody,
+    tr,
+    td,
+    img {
+      padding: 0;
+      margin: 0;
+      border: none;
+      border-spacing: 0px;
+      border-collapse: collapse;
+    }
+
+    hr {
+      background: #D1D9E6;
+      border-radius: 12px;
+      max-width: 600px;
+    }
+
+    /* Add some padding for small screens */
+    .wrapper {
+      padding-left: 10px;
+      padding-right: 10px;
+      width: 600px;
+    }
+
+    .section {
+      width: 600px;
+    }
+
+    .wrapper .ecopasslogo {
+      width: 137px;
+    }
+
+    .headerbanner {
+      width: 600px;
+    }
+
+    .eventname {
+      font-weight: bold;
+      font-size: 26px;
+      line-height: 30px;
+      color: #00008C;
+    }
+
+    .begining {
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 18px;
+      color: #3E406D;
+      margin-bottom: 8px;
+    }
+
+    .joinbutton {
+      text-align: center;
+      color: #fff;
+      background-color: #00008c;
+      border-radius: 6px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      margin-top: 7px;
+      height: 30px;
+      width: 320px;
+      line-height: 30px;
+      vertical-align: middle;
+      margin: 0 auto;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      cursor: pointer;
+    }
+
+    .buttonicon {
+      width: 24px;
+      height: 24px;
+      margin-top: 4.5px;
+      margin-right: 15px;
+    }
+
+    .inner-button-icon {
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .available-text {
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 18px;
+      color: #3E406D;
+    }
+
+    .event-date {
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 21px;
+      color: #3E406D;
+    }
+
+    .event-hour {
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 21px;
+      color: #3E406D;
+    }
+
+    .td-middle-align {
+      vertical-align: middle !important;
+    }
+
+    .inner-button-icon-outlined {
+      text-align: center;
+      color: #00008c;
+      background-color: white;
+      border-radius: 6px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      margin-top: 7px;
+      height: 30px;
+      width: 220px;
+      line-height: 30px;
+      vertical-align: middle;
+      margin: 0 auto;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      cursor: pointer;
+      border: 1px solid #D1D9E6;
+    }
+
+    .help-text {
+      font-weight: bold;
+      margin-top: 30px;
+      font-size: 16px;
+      line-height: 18px;
+      text-align: center;
+      color: #00008C;
+    }
+
+    .iconslink {
+      width: 150px;
+      position: relative;
+      text-align: center;
+      text-decoration: none;
+      color: #00008c;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .footer-icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 10px auto;
+    }
+
+    .icon-box {
+      vertical-align: baseline;
+      width: 200px;
+      min-width: 200px;
+      max-width: 200px;
+    }
+
+    .link {
+      height: 40px;
+    }
+
+    .td-icon-content {
+      width: 200px;
+    }
+
+    .createbutton {
+      text-align: center;
+      color: #fff;
+      background-color: #00008c;
+      border-radius: 6px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      margin-top: 7px;
+      height: 30px;
+      width: 170px;
+      line-height: 30px;
+      vertical-align: middle;
+      margin: 0 auto;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      cursor: pointer;
+    }
+
+    .recomendations {
+      display: flex;
+    }
+
+    .recomendation-icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+    }
+
+    .recomendation-link {
+      font-size: 16px;
+      line-height: 18px;
+      color: #00008C;
+      text-decoration: none;
+    }
+
+
+    .register-data {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 18px;
+      color: #00008C;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+      margin: 0;
+      padding: 0;
+      padding-bottom: 20px;
+      line-height: 1.6;
+      font-family: 'Helvetica', 'Arial', sans-serif;
+    }
+
+    p,
+    a,
+    li {
+      font-family: 'Helvetica', 'Arial', sans-serif;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    @media only screen and (max-width: 620px) {
+
+      .wrapper {
+        width: 100%;
+      }
+
+      .section {
+        width: 100%;
+      }
+
+      .wrapper .column {
+        width: 100%;
+        display: block;
+      }
+
+      .wrapper .ecopasslogo {
+        width: 137px;
+      }
+
+      .headerbanner {
+        width: 100%;
+      }
+
+      .icon-box {
+        vertical-align: center;
+        width: 100%;
+        text-align: center;
+      }
+
+      .iconslink {
+        width: 100%;
+        text-align: center;
+        margin: 0 auto 10px auto;
+      }
+
+      .centered-table {
+        margin: 0 auto 20px auto;
+      }
+
+      .td-icon-content {
+        width: 100%;
+      }
+
+      .align-middle-mobile {
+        margin: 0 auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <table width="100%">
+    <tbody>
+      <tr>
+        <td class="wrapper" align="center">
+          <!-- Header image -->
+          <table class="section" cellpadding="0" cellspacing="0">
+            <tr>
+              <td class="column">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td align="left">
+                        <img src="https://ecopass-mail-assets.s3.amazonaws.com/logolanding.png" alt="Ecopass"
+                          width="137" class="ecopasslogo" />
+                        <br>
+                        <img src={{event.design.banner}} alt="Banner" class="headerbanner" />
+                        <br>
+                        <div class="begining">Felicidades, estás <b>registrado</b> en</div>
+                        <h1 class="eventname">{{event.name}}</h1>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <br>
+          <!--  center button -->
+          <table style="margin-bottom:40px;">
+            <tbody>
+              <tr>
+                <td align="left">
+                  <a href="{{ticket.link}}" target="_blank" class="joinbutton">
+                    <span class="inner-button-icon">
+                      <img src="https://ecopass-new-home.s3.us-east-2.amazonaws.com/new-assets/icon-acreditador.png"
+                        alt="camera" width="24" class="buttonicon">
+                      Recuerda que tu entrada es tu carnet
+                    </span>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- separator -->
+          <hr>
+          <!-- Two columns -->
+          <table class="section" cellpadding="0" cellspacing="0" style="margin-top:30px; margin-bottom:20px;">
+            <tr>
+              <td class="column" width="290" valign="middle">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td align="left">
+                        <p class="available-text">Transmisión disponible:</p>
+                        <p class="event-date">{{event.dateString}}</p>
+                        <p class="event-hour">{{event.hourString}} </p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+              <td class="column" width="20" valign="top">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td> &nbsp; </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+              <td class="column" width="290" valign="middle">
+                <table class="align-middle-mobile">
+                  <tbody>
+                    <tr>
+                      <td align="right" valign="middle">
+                        <div>
+                          <a href="{{ticket.link}}" target="_blank" class="inner-button-icon-outlined">
+                            <span class="inner-button-icon">
+                              <img
+                                src="https://ecopass-new-home.s3.us-east-2.amazonaws.com/new-assets/icon-calendar.png"
+                                alt="camera" width="24" class="buttonicon">
+                              Añadir al calendario
+                            </span>
+                          </a>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <!-- direccion-->
+          <table class="section" cellpadding="0" cellspacing="0" style="margin-top:10px; margin-bottom:20px;">
+            <tr>
+              <td class="column">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td align="left">
+                        <p class="available-text">Ubicación:</p>
+                        <p class="event-date"> {{event.address}}, {{event.place}}, {{event.state}}, {{event.country}}
+                        </p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <!-- register data-->
+          <table class="section" cellpadding="0" cellspacing="0" style="margin-top:10px; margin-bottom:50px;">
+            <tr>
+              <td class="column">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td align="left">
+                        <p class="available-text">Datos del registro:</p>
+                        <p class="available-text">RUT/DNI: <span class="register-data">{{consumer.dni}}</span> </p>
+                        <p class="available-text">Entrada: <span
+                            class="register-data">{{ticket.eventTicket.name}}</span></span></p>
+                        <p class="available-text">Correo: <span class="register-data"></span>{{consumer.email}}</span>
+                        </p>
+                        <p class="available-text">Valor: <span class="register-data"></span>{{ticket.eventTicket.price}}
+                          {{payment.currency}}</span></p>
+                        <p class="available-text">Cargo: <span class="register-data"></span>{{ticket.commission}}
+                          {{payment.currency}}</span></p>
+                        <p class="available-text">Total: <span class="register-data"></span>{{ticket.total}}
+                          {{payment.currency}}</span></p>
+                        <p class="available-text">Registro: <span
+                            class="register-data"></span>{{order.createdAt}}</span></p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <!-- separator -->
+          <hr>
+          <!--  center button -->
+          <table>
+            <tbody>
+              <tr>
+                <td align="center">
+                  <p class="help-text">¿Necesitas ayuda?</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- three columns -->
+          <table class="section" cellpadding="0" cellspacing="0" style="margin-top:30px; margin-bottom:50px;">
+            <tr>
+              <td class="column" class="icon-box">
+                <table class="centered-table">
+                  <tbody>
+                    <tr>
+                      <td align="center" class="td-icon-content">
+                        <a class="iconslink"
+                          href="https://base-de-conocimiento-usuario.helpscoutdocs.com/article/23-como-acceder-al-streaming">
+                          <img src="https://ecopass-mail-assets.s3.amazonaws.com/help.png" width="48"
+                            class="footer-icon">
+                          <div class="link">¿Como ingresar a un evento presencial?</div>
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+              <td class="column" class="icon-box">
+                <table class="centered-table">
+                  <tbody>
+                    <tr>
+                      <td align="center" class="td-icon-content">
+                        <a class="iconslink"
+                          href="https://base-de-conocimiento-usuario.helpscoutdocs.com/article/24-como-transfiero-mi-entrada-a-otra-persona">
+                          <img src="https://ecopass-mail-assets.s3.amazonaws.com/ticket.png" width="48"
+                            class="footer-icon">
+                          <div class="link">¿Como transferir mi entrada?</div>
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+              <td class="column" class="icon-box">
+                <table class="centered-table">
+                  <tbody>
+                    <tr>
+                      <td align=" center" class="td-icon-content">
+                        <a class="iconslink" href="https://base-de-conocimiento-usuario.helpscoutdocs.com/">
+                          <img src="https://ecopass-mail-assets.s3.amazonaws.com/support.png" width="48"
+                            class="footer-icon">
+                          <div class="link">Contactar al organizador</div>
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </table>
+          <!--centered button -->
+          <table style="margin-bottom:40px;">
+            <tbody>
+              <tr>
+                <td align="left">
+                  <a href="https://ecopass.cl/login?producer" target="_blank" class="createbutton">
+                    <span class="inner-button-icon" style="color:white;">
+                      Crea tu evento hoy
+                    </span>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- guide and icon -->
+          <table style="margin-bottom:40px;">
+            <tbody>
+              <tr>
+                <td align="left">
+                  <span class="recomendations">
+                    <img src="https://ssr-home-new.s3.us-east-2.amazonaws.com/icon-info.png" alt="info"
+                      class="recomendation-icon" />
+                    <a href="https://base-de-conocimiento-usuario.helpscoutdocs.com/" class="recomendation-link">
+                      Guia de <b>recomendaciones para asistir</b> a un evento
+                    </a>
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>
